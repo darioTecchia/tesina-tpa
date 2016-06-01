@@ -1,0 +1,127 @@
+\chapter{Pattern Strutturali}
+
+I pattern strutturali consentono di riutilizzare degli oggetti 
+esistenti fornendo agli utilizzatori un'interfaccia più adatta alle 
+loro esigenze.
+
+I design patterns strutturali possono essere basati su classi o oggetti.
+
+I design pattern strutturali basati su classi utilizzano l’ereditarietà 
+per generare classi che combinano le proprietà di classi base.
+
+I design pattern strutturali basati su oggetti mostrano come comporre 
+oggetti per realizzare nuove funzionalità. 
+Dando flessibilità alla composizione che viene modificata a run-time, 
+cosa impossibile da realizzare con le classi.
+
+  \section{Adapter Pattern}
+  
+    \subsection{Introduzione e Scopo}
+    
+    L'Adapter Pattern, conosciuto anche come Wrapper, ha il fine di fornire
+    una soluzione astratta al problema dell'interoperabilità tra interfacce 
+    differenti.
+    
+    Il problema si presenta ogni qual volta nel progetto di un software 
+    si debbano utilizzare sistemi di supporto (come per esempio librerie) 
+    la cui interfaccia non è perfettamente compatibile con quanto richiesto 
+    da applicazioni già esistenti senza dover andare a riscrivere 
+    parte del sistema che risulta un compito oneroso.
+    
+    \subsection{Partecipanti}
+    
+    L'Adapter pattern ha in totale quattro partecipanti:
+    \begin{description}
+      \item[Adaptee] \hfill \\
+      Indica un’esistente interfaccia che ha bisogno di essere adattata; 
+      esso rappresenta il componente con il quale il client vuole interagire.
+      
+      \item[Target] \hfill \\
+      Indica l’interfaccia specifica del dominio che utilizza il client; 
+      fondamentalmente rappresenta l’interfaccia dell’Adapter che aiuta il 
+      client ad interagire con l’Adaptee.
+
+      \item[Adapter] \hfill \\
+      Adatta l’interfaccia Adaptee all’interfaccia Target; 
+      in altre parole, implementa l’interfaccia di Target, e connette 
+      Adaptee con il client.
+
+      \item[Client] \hfill \\
+      Il client principale che vuole ottenere l’operazione.
+      
+    \end{description}
+    
+    \subsection{Class Adapter e Object Adapter} \hfill
+    
+    Possiamo avere due tipi di Adapter Pattern:
+    \begin{itemize}
+      \item Class Adapter
+      \item Object Adapter
+    \end{itemize}
+    
+    La principale differenza sta nel fatto che il Class Adapter usa il 
+    concetto dell’ereditarietà, mentre l’Object Adapter usa il concetto 
+    della Composizione.
+  
+    \paragraph{Class Adapter} \hfill \\
+    Il \emph{Class Adapter} usa l’ereditarietà multipla e può contenere 
+    solo una classe. Non può contenere un’interfaccia poiché per 
+    definizione deve derivare da qualche classe base:
+    
+    \begin{figure}[htbp]
+      \begin{center}
+        \includegraphics[width=12cm]{img/class_adapter.png}
+      \end{center}
+      \caption{UML Class Adapter}
+      \label{fig:dessin}
+    \end{figure}
+    
+    \paragraph{Object Adapter} \hfill \\
+    L’\emph{Object Adapter} si basa sulla composizione di oggetti e può 
+    contenere interfacce o classi, o entrambe.
+    
+    \begin{figure}[htbp]
+      \begin{center}
+        \includegraphics[width=12cm]{img/object_adapter.png}
+      \end{center}
+      \caption{UML Object Adapter}
+      \label{fig:dessin}
+    \end{figure}
+    
+    \subsection{Quando è importante usare il Pattern}
+    Detto ciò sicuramente possiamo dire che l'importanza dell'Adapter Pattern
+    possiamo notarla quando:
+    
+    \begin{itemize}
+      
+      \item Vogliamo usare classi esistenti, e le loro
+      interfacce non sono compatibili con quelle di cui abbiamo bisogno.
+      Per esempio quando si deve usare del codice di terze parti non 
+      pienamente compatibile con il codice del client.
+    
+      \item Si vogliono creare classi riutilizzabili che cooperino con 
+      classi impreviste e che non hanno necessariamente interfacce 
+      compatibili.
+      
+      \item Si vogliono usare parecchie sottoclassi esistenti, ma risulta 
+      poco pratico adattare la loro interfaccia facendo sottoclassi di ognuna. 
+      Un Object Adapter può adattare l’interfaccia della sua superclasse. 
+      Valido solo per Object Adapter.
+      
+      \item Ancora, un Object Adapter può essere utilizzato per un codice 
+      che usa classi black-box, o che abbia bisogno dell’ereditarietà 
+      multipla; invece, Class Adapter viene utilizzato se si ha bisogno 
+      dell’ereditarietà singola.
+    
+    \end{itemize}
+    
+    \subsection{Vantaggi del Pattern}
+    
+    Per quanto riguarda i vantaggi di questo pattern, nel caso del 
+    \emph{Class Adapter} abbiamo l'istanzazione di solo un nuovo oggetto,
+    meno codice richiesto rispetto all'Object Adapter, e infine abbiamo la 
+    possibilità di fare l'override dei metodi di \emph{Adaptee}; invece,
+    per l'\emph{Object Adapter} possiamo dire che è più flessibile rispetto
+    al \emph{Class Adapter} e non richiede sottoclassi per lavorare.
+    \textbf{Adapter} lavora con \textbf{Adaptee} e tutte le sue sottoclassi.
+    

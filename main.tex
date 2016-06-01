@@ -1,0 +1,61 @@
+\documentclass[a4paper, 12pt, oneside]{book}
+
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage{color}
+\usepackage{listings}
+
+\author{Marco Ferraioli \and Dario Tecchia}
+\title{Design Pattern}
+\date{2015-16}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{whitesmoke}{RGB}{236,236,236}
+
+\lstset{ %
+  numbers=left,
+  backgroundcolor=\color{whitesmoke},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+\begin{document}
+
+  \begin{titlepage}
+    \centering
+    \includegraphics[width=0.20\textwidth]{img/python-logo.png}\par\vspace{1cm}
+    {\scshape\LARGE Università degli Studi di Salerno \par}
+    \vspace{1cm}
+    {\scshape\Large Tesina Design Pattern\par}
+    \vspace{1.5cm}
+    {\huge\bfseries Adapter Pattern\par}
+    \vspace{2cm}
+    {\Large\itshape M.~Ferraioli D.~Tecchia\par}
+    \vfill
+
+    \vfill
+
+  % Bottom of the page
+    {\large 2015-16\par}
+  \end{titlepage}
+
+  %\maketitle
+  \tableofcontents
+  
+  \input{capitolo1}
+    
+  \input{capitolo2}
+  
+  \input{conclusioni}
+    
+\end{document}
