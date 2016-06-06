@@ -2,7 +2,7 @@ from tkinter import *
 from weather import Weather
 from adapter import SpecialAdapter
 
-kelvin_weather = Weather("fisciano")
+kelvin_weather = Weather("")
 meteo = SpecialAdapter(kelvin_weather, dict(
     get_temp = lambda: (kelvin_weather.get_temp() - 273),
     get_temp_min = lambda: (kelvin_weather.get_temp_min() - 273),

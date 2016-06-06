@@ -1,0 +1,18 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {chapter}{\numberline {1}Pattern Strutturali}{2}
+\contentsline {section}{\numberline {1.1}Adapter Pattern}{2}
+\contentsline {subsection}{\numberline {1.1.1}Introduzione e Scopo}{2}
+\contentsline {subsection}{\numberline {1.1.2}Partecipanti}{2}
+\contentsline {subsection}{\numberline {1.1.3}Class Adapter e Object Adapter}{3}
+\contentsline {paragraph}{Class Adapter}{3}
+\contentsline {paragraph}{Object Adapter}{4}
+\contentsline {subsection}{\numberline {1.1.4}Quando \IeC {\`e} importante usare il Pattern}{4}
+\contentsline {subsection}{\numberline {1.1.5}Vantaggi del Pattern}{5}
+\contentsline {chapter}{\numberline {2}Esempio di appplicazione}{6}
+\contentsline {section}{\numberline {2.1}Approccio Object Oriented}{6}
+\contentsline {subsection}{\numberline {2.1.1}Codice}{7}
+\contentsline {section}{\numberline {2.2}Approccio "Pythonic way"}{8}
+\contentsline {subsection}{\numberline {2.2.1}Codice}{8}
+\contentsline {section}{\numberline {2.3}Screenshots}{9}
+\contentsline {chapter}{\numberline {3}Conclusioni}{10}

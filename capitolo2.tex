@@ -5,10 +5,11 @@
   cerca, verrà eseguita una richiesta HTTP di tipo GET alle API di \textit{openweather.org}
   per ottenere la temperatura massima, minima e attuale del luogo indicato.
   
-  In questo caso le temperature ci verranno fornite in Kelvin, ma a noi importa
-  averle in Celsius.
+  In questo caso le temperature ci verranno fornite in Kelvin, però abbiamo
+  bisogno nel nostro appplicativo, di avere il corrispettivo valore in gradi
+  Celsius.
   
-  \section{Metodo tradizionale}
+  \section{Approccio Object Oriented}
   
   In questo esempio la classe che deve essere adattata è \textbf{\textit{Weather}} che ha il
   metodo 
@@ -42,14 +43,18 @@
   \textbf{\textit{Request()}} con \textbf{\textit{get-meteo()}} e 
   \textbf{\textit{SpecificRequest()}} con \textbf{\textit{get-weather()}}.
   
-  \section{Metodo "Pythonic way"}
+  \section{Approccio "Pythonic way"}
   
-  Proponiamo anche una variante del primo esempio cercando di sfruttare le potenzialità
-  di Python, andando a sostituire il metodo dell'oggetto "legacy" con il 
-  metodo che noi ci aspettiamo. 
+  Proponiamo anche una variante del primo esempio cercando di sfruttare le 
+  potenzialità offerte dal linguaggio Python, andando a sostituire il metodo 
+  dell'oggetto "legacy" con il metodo che noi ci aspettiamo. 
   
-  Come possiamo fare ciò? In Python, ogni oggetto può essere visto come un 
-  dizionario accedendo alla proprietà \textbf{\_\_dict\_\_}.
+  Come possiamo fare ciò? In Python, sappiamo che ogni oggetto può essere 
+  visto come un dizionario accedendo alla proprietà \textbf{\_\_dict\_\_}
+  di quest'ultimo.
+  Procediamo con l'inserimento dei metodi richiesti dalla nostra interfaccia 
+  nel dizionario dell'oggetto, dove ad ogni metodo da adattare associamo un'espressione
+  lambda che effettua la conversione da Kelvin a Celsius.
   
   \subsection{Codice}
   
@@ -64,4 +69,12 @@
   \textbf{\textit{main.py}}
   \lstinputlisting[language=Python, frame=single, firstline=5, lastline=10]{code/meteo-dict/main.py}
   
+  \section{Screenshots}
   
+  \begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[width=7cm]{img/screen/screen_1.png}
+    \end{center}
+    \caption{Screenshot dell'appplicazione}
+    \label{fig:dessin}
+  \end{figure}

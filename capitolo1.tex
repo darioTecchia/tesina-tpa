@@ -4,15 +4,10 @@ I pattern strutturali consentono di riutilizzare degli oggetti
 esistenti fornendo agli utilizzatori un'interfaccia più adatta alle 
 loro esigenze.
 
-I design patterns strutturali possono essere basati su classi o oggetti.
-
-I design pattern strutturali basati su classi utilizzano l’ereditarietà 
-per generare classi che combinano le proprietà di classi base.
-
-I design pattern strutturali basati su oggetti mostrano come comporre 
-oggetti per realizzare nuove funzionalità. 
-Dando flessibilità alla composizione che viene modificata a run-time, 
-cosa impossibile da realizzare con le classi.
+I design patterns strutturali possono essere basati su classi o oggetti:
+Quelli basati su classi utilizzano l’ereditarietà per generare classi 
+che combinano le proprietà di classi base, mentre, quelli basati su oggetti 
+mostrano come comporre oggetti per realizzare nuove funzionalità.
 
   \section{Adapter Pattern}
   
@@ -22,11 +17,12 @@ cosa impossibile da realizzare con le classi.
     una soluzione astratta al problema dell'interoperabilità tra interfacce 
     differenti.
     
-    Il problema si presenta ogni qual volta nel progetto di un software 
-    si debbano utilizzare sistemi di supporto (come per esempio librerie) 
-    la cui interfaccia non è perfettamente compatibile con quanto richiesto 
-    da applicazioni già esistenti senza dover andare a riscrivere 
-    parte del sistema che risulta un compito oneroso.
+    Il problema si presenta ogni qual volta nello sviluppo di un software 
+    si devono utilizzare sistemi di supporto (come per esempio librerie)
+    di terze parti la cui interfaccia non è perfettamente compatibile con 
+    quella richiesta da software già esistenti senza poter andare a 
+    riscrivere parte del sistema. Anche se quest'ultima possibilità fosse
+    possibile sarebbe comunque un compito oneroso.
     
     \subsection{Partecipanti}
     
@@ -61,16 +57,17 @@ cosa impossibile da realizzare con le classi.
     
     La principale differenza sta nel fatto che il Class Adapter usa il 
     concetto dell’ereditarietà, mentre l’Object Adapter usa il concetto 
-    della Composizione.
+    della composizione.
   
     \paragraph{Class Adapter} \hfill \\
-    Il \emph{Class Adapter} usa l’ereditarietà multipla e può contenere 
-    solo una classe. Non può contenere un’interfaccia poiché per 
+    Il \emph{Class Adapter}, come accennato, utilizza l’ereditarietà 
+    multipla e può contenere una sola classe. 
+    Non può contenere un’interfaccia poiché per 
     definizione deve derivare da qualche classe base:
     
     \begin{figure}[htbp]
       \begin{center}
-        \includegraphics[width=12cm]{img/class_adapter.png}
+        \includegraphics[width=12cm]{img/umls/class_adapter.png}
       \end{center}
       \caption{UML Class Adapter}
       \label{fig:dessin}
@@ -82,15 +79,15 @@ cosa impossibile da realizzare con le classi.
     
     \begin{figure}[htbp]
       \begin{center}
-        \includegraphics[width=12cm]{img/object_adapter.png}
+        \includegraphics[width=12cm]{img/umls/object_adapter.png}
       \end{center}
       \caption{UML Object Adapter}
       \label{fig:dessin}
     \end{figure}
     
     \subsection{Quando è importante usare il Pattern}
-    Detto ciò sicuramente possiamo dire che l'importanza dell'Adapter Pattern
-    possiamo notarla quando:
+    Possiamo concludere sicuramente, che l'Adapter Pattern risulta un'ottima
+    scelta quando:
     
     \begin{itemize}
       
@@ -108,9 +105,8 @@ cosa impossibile da realizzare con le classi.
       Un Object Adapter può adattare l’interfaccia della sua superclasse. 
       Valido solo per Object Adapter.
       
-      \item Ancora, un Object Adapter può essere utilizzato per un codice 
-      che usa classi black-box, o che abbia bisogno dell’ereditarietà 
-      multipla; invece, Class Adapter viene utilizzato se si ha bisogno 
+      \item Un Object Adapter può essere utilizzato per un codice 
+      che usa classi legacy. Invece, Il Class Adapter viene utilizzato se si ha bisogno 
       dell’ereditarietà singola.
     
     \end{itemize}
@@ -118,10 +114,9 @@ cosa impossibile da realizzare con le classi.
     \subsection{Vantaggi del Pattern}
     
     Per quanto riguarda i vantaggi di questo pattern, nel caso del 
-    \emph{Class Adapter} abbiamo l'istanzazione di solo un nuovo oggetto,
-    meno codice richiesto rispetto all'Object Adapter, e infine abbiamo la 
+    \emph{Class Adapter} abbiamo l'istanziazione di un solo nuovo oggetto,
+    meno codice rispetto all'Object Adapter, e la 
     possibilità di fare l'override dei metodi di \emph{Adaptee}; invece,
     per l'\emph{Object Adapter} possiamo dire che è più flessibile rispetto
-    al \emph{Class Adapter} e non richiede sottoclassi per lavorare.
+    al \emph{Class Adapter} e non richiede l'impiego di sottoclassi per lavorare.
     \textbf{Adapter} lavora con \textbf{Adaptee} e tutte le sue sottoclassi.
-    
